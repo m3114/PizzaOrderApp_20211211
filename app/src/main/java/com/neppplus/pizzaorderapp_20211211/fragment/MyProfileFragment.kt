@@ -1,5 +1,6 @@
 package com.neppplus.pizzaorderapp_20211211.fragment
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,8 +26,18 @@ class MyProfileFragment : Fragment() {
 
         btnEditNickname.setOnClickListener{
             val myIntent = Intent(requireContext(), EditNicknameActivity::class.java)
-            startActivityForResult(myIntent.REQ_)
+           startActivityForResult(myIntent.REQ_FOR_NICKNAME)
 
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQ_FOR_NICKNAME){
+            if (requestCode == Activity.RESULT_OK)
+                val nickname = data!!.getStringExtra("nick")
+
+            txtNickname.text = nickname
         }
     }
 
