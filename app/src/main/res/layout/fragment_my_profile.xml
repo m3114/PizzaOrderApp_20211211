@@ -19,7 +19,7 @@
             android:id="@+id/txtNickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ㅛ누"/>
+            android:text="ysn"/>
 
         <TextView
             android:layout_width="0dp"
